@@ -1,6 +1,22 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
 
+function selectReviewer(reviewers) {
+  const now = new Date();
+  const week = now.getFullYear() * 52 + getWeek(now);
+  const index = week % reviewers.length;
+
+  return reviewers[index];
+}
+
+const getWeek = (date) => {
+  const currentDate = date.getDate();
+  const firstDay = new Date(date.setDate(1)).getDay();
+
+  return Math.ceil((currentDate + firstDay) / 7);
+};
+
+
 function run() {
   try {
     const reviewers = core.getInput("reviewers").split(",").map(r => r.trim());
@@ -31,18 +47,3 @@ function run() {
 }
 
 run();
-
-function selectReviewer(reviewers) {
-  const now = new Date();
-  const week = now.getFullYear() * 52 + getWeek(now);
-  const index = week % reviewers.length;
-
-  return reviewers[index];
-}
-
-const getWeek = (date) => {
-  const currentDate = date.getDate();
-  const firstDay = new Date(date.setDate(1)).getDay();
-
-  return Math.ceil((currentDate + firstDay) / 7);
-};

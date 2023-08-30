@@ -9811,6 +9811,22 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(972);
 const github = __nccwpck_require__(6398);
 
+function selectReviewer(reviewers) {
+  const now = new Date();
+  const week = now.getFullYear() * 52 + getWeek(now);
+  const index = week % reviewers.length;
+
+  return reviewers[index];
+}
+
+const getWeek = (date) => {
+  const currentDate = date.getDate();
+  const firstDay = new Date(date.setDate(1)).getDay();
+
+  return Math.ceil((currentDate + firstDay) / 7);
+};
+
+
 function run() {
   try {
     const reviewers = core.getInput("reviewers").split(",").map(r => r.trim());
@@ -9841,21 +9857,6 @@ function run() {
 }
 
 run();
-
-function selectReviewer(reviewers) {
-  const now = new Date();
-  const week = now.getFullYear() * 52 + getWeek(now);
-  const index = week % reviewers.length;
-
-  return reviewers[index];
-}
-
-const getWeek = (date) => {
-  const currentDate = date.getDate();
-  const firstDay = new Date(date.setDate(1)).getDay();
-
-  return Math.ceil((currentDate + firstDay) / 7);
-};
 
 })();
 
