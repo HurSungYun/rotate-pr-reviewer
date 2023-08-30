@@ -1,0 +1,19 @@
+name: "Rotate Pull Request Reviewers"
+description: "Rotate Pull Request reviewers"
+branding:
+  icon: "bar-chart"
+  color: "orange"
+inputs:
+  github_token:
+    description: "GitHub Access Token. Use GITHUB_TOKEN in default"
+  reviewers:
+    description: "comma seperated github handle"
+  index:
+    description: "start index. TODO"
+  time_grain:
+    description: "weekly. TODO"
+  label:
+    description: "label. TODO"
+runs:
+  using: "node16"
+  main: "dist/index.js"
