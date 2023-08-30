@@ -1,0 +1,13 @@
+on:
+  pull_request: [opened]
+
+jobs:
+  rotate-test:
+    runs-on: ubuntu-latest
+    name: test
+    steps:
+      - name: Hello world action step
+        uses: ./ # Uses an action in the root directory
+        id: hello
+        with:
+          reviewers: "HurSungYun,HurSungYun"
