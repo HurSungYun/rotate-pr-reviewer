@@ -1,5 +1,6 @@
 on:
-  pull_request: [opened]
+  pull_request:
+    types: [opened, reopened]
 
 jobs:
   rotate-test:
