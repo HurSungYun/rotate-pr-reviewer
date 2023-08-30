@@ -40,7 +40,7 @@ function run() {
       ...context.repo,
     };
 
-    octokit.pulls.requestReviewers(params);
+    const res = octokit.rest.pulls.requestReviewers(params);
   } catch (error) {
     core.setFailed(error.message);
   }
