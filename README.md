@@ -1,1 +1,1 @@
-# rotate-reviewer
+# rotate-pr-reviewer
