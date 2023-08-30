@@ -9843,7 +9843,7 @@ function run() {
 run();
 
 function selectReviewer(reviewers) {
-  const now = time.Now();
+  const now = new Date();
   const week = now.getFullYear() * 52 + getWeek(now);
   const index = week % reviewers.length;
 
