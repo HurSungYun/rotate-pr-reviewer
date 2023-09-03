@@ -46,7 +46,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Rotate Reviewers
-        uses: <your-username>/rotate-reviewers-action@v1
+        uses: HurSungYun/rotate-reviewers-action@v0.0.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reviewers: user1,user2,user3
