@@ -2,7 +2,7 @@
 
 ![icon](https://img.shields.io/badge/icon-bar--chart-orange)
 
-This GitHub Action helps you rotate Pull Request reviewers in your repository. You can use it to automatically update the list of reviewers for your PRs based on a predefined rotation schedule. This can help distribute the reviewing workload among team members and ensure that everyone gets a chance to review.
+This GitHub Action helps you rotate Pull Request reviewers in your repository. You can use it to automatically update the list of reviewers for your PRs based on a predefined rotation schedule. This can help distribute the reviewing workload among team members.
 
 ## Inputs
 
